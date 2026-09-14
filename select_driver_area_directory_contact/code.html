@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>DriveSecure - Executive Chauffeur Directory</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS CDN -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#00174b",
+            "surface-container-low": "#f2f4f6",
+            "secondary-fixed": "#dbe1ff",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2d3133",
+            "tertiary-container": "#002113",
+            "on-tertiary-fixed": "#002113",
+            "surface-bright": "#f7f9fb",
+            "on-primary-container": "#7c839b",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed-dim": "#bec6e0",
+            "tertiary-fixed": "#6ffbbe",
+            "primary": "#000000",
+            "background": "#f7f9fb",
+            "primary-container": "#131b2e",
+            "surface-variant": "#e0e3e5",
+            "on-tertiary-container": "#009668",
+            "outline": "#76777d",
+            "on-error-container": "#93000a",
+            "surface-container": "#eceef0",
+            "surface-container-highest": "#e0e3e5",
+            "secondary-fixed-dim": "#b4c5ff",
+            "outline-variant": "#c6c6cd",
+            "secondary-container": "#316bf3",
+            "inverse-on-surface": "#eff1f3",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dae2fd",
+            "surface": "#f7f9fb",
+            "on-surface-variant": "#45464d",
+            "tertiary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#565e74",
+            "inverse-primary": "#bec6e0",
+            "on-secondary-container": "#fefcff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-primary-fixed": "#131b2e",
+            "secondary": "#0051d5",
+            "on-background": "#191c1e",
+            "surface-dim": "#d8dadc",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen flex flex-col pb-24 selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+<!-- TopAppBar (from Shared Components JSON) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-space-md h-14 bg-surface-container-lowest shadow-sm">
+<div class="flex items-center space-x-3">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-full hover:bg-surface-container-high active:scale-95 transition-all text-on-surface flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-on-surface">DriveSecure</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button aria-label="Notifications" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">notifications</span>
+</button>
+<button aria-label="Account Status" class="w-9 h-9 flex items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container-high active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[20px]">shield</span>
+</button>
+</div>
+</header>
+<!-- Sticky Area Selector & Filter Control Console -->
+<section class="sticky top-14 z-40 bg-surface-container-lowest shadow-sm backdrop-blur-md bg-opacity-95">
+<div class="max-w-7xl mx-auto px-margin md:px-margin-desktop py-space-sm space-y-3">
+<!-- Primary Area Selector Bar -->
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar py-1 flex-1">
+<!-- Area 1 (Active) -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-primary-container text-surface-container-lowest shadow-sm whitespace-nowrap active:scale-95 transition-all">
+<span class="material-symbols-outlined text-[18px] text-tertiary-fixed" data-icon="location_on" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<span class="font-label-lg text-label-lg">Area 1 (Downtown)</span>
+<span class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-2 py-0.5 rounded-full uppercase tracking-wider flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary animate-ping"></span>
+              8 Drivers Available
+            </span>
+</button>
+<!-- Area 2 -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="explore">explore</span>
+<span class="font-label-lg text-label-lg">Area 2 (Northside)</span>
+</button>
+<!-- Area 3 -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="explore">explore</span>
+<span class="font-label-lg text-label-lg">Area 3 (West End)</span>
+</button>
+<!-- Area 4 -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant whitespace-nowrap transition-colors">
+<span class="material-symbols-outlined text-[18px] text-outline" data-icon="flight_takeoff">flight_takeoff</span>
+<span class="font-label-lg text-label-lg">Area 4 (Airport Corridor)</span>
+</button>
+</div>
+<!-- Quick View Toggle or Refresh Indicator -->
+<div class="hidden lg:flex items-center space-x-2 pl-4 border-l border-outline-variant">
+<span class="font-label-md text-label-md text-on-surface-variant">Live Dispatch Telematics</span>
+<span class="flex h-2.5 w-2.5 relative">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-tertiary-fixed-dim opacity-75"></span>
+<span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-on-tertiary-container"></span>
+</span>
+</div>
+</div>
+<!-- Secondary Search Filter Chips -->
+<div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface text-on-surface border border-outline-variant font-label-md text-label-md hover:border-secondary transition-all active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-amber-500" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Top Rated 4.8+</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed font-label-md text-label-md border border-secondary/20 active:scale-95">
+<span class="w-2 h-2 rounded-full bg-secondary-container"></span>
+<span>Available Now</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface text-on-surface border border-outline-variant font-label-md text-label-md hover:border-secondary transition-all active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="swap_driving_apps_wheel">swap_driving_apps_wheel</span>
+<span>Manual &amp; Automatic</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface text-on-surface border border-outline-variant font-label-md text-label-md hover:border-secondary transition-all active:scale-95">
+<span class="material-symbols-outlined text-[16px] text-outline" data-icon="diamond">diamond</span>
+<span>Luxury Chauffeurs</span>
+</button>
+<button class="flex items-center gap-1 px-2.5 py-1.5 rounded-full bg-surface-container text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors ml-auto">
+<span class="material-symbols-outlined text-[16px]" data-icon="tune">tune</span>
+<span class="hidden sm:inline">More Filters</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Canvas Content -->
+<main class="flex-1 max-w-7xl mx-auto w-full px-margin md:px-margin-desktop pt-6 space-y-6">
+<!-- Section Header & Status Overview -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-surface-container-high pb-4">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container" data-icon="shield">shield</span>
+            Protocol V4 Guaranteed
+          </span>
+<span class="font-label-sm text-label-sm text-outline">Metropolitan Security Protocol</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-primary tracking-tight">Verified Driver Directory</h1>
+</div>
+<p class="text-body-md font-body-md text-on-surface-variant">
+        Displaying certified executive drivers in <strong class="text-on-surface">Area 1 (Downtown Sector)</strong>
+</p>
+</div>
+<!-- Drivers List Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- DRIVER CARD 1: Marcus Vance -->
+<article class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/60 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] p-space-md flex flex-col justify-between hover:shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-200">
+<div class="space-y-4">
+<!-- Top Row: Avatar & Identification -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3.5">
+<div class="relative">
+<img alt="Marcus Vance" class="w-14 h-14 rounded-full object-cover ring-2 ring-surface-container" data-alt="Close-up professional portrait of Marcus Vance, an experienced executive chauffeur dressed in a crisp bespoke dark navy suit and slate grey tie. Soft cinematic studio lighting accentuates his calm and focused demeanor against a sleek metropolitan luxury interior backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBn0zAQosPuWmTOC9tbl6gk4RAGvrsl0EqV5r83RGoQIGGd4kfjWxL-73ys5tyExE9p4a0PDOFMScVy3YnGief2Swx6Ifr2Y8AoQyj-YLhTzhiBknYFZwmGG0TymfVcx5WcIBac08UBH9MiPqL5XbZIkJkPAHtGTuMGGSwKbx1SpHjL0a0Ruf9H63gZ-9ChWqPGQ2530YegRW8Ra3Em375EHDHBTYmMIkUU9vUly5aMSQoEdipIIKtP"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-600 text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-primary">Marcus Vance</h2>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mercedes &amp; BMW certified</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant tracking-wider font-mono">E-892-SEC</span>
+<span class="font-body-sm text-body-sm text-outline">• 8 yrs exp</span>
+</div>
+</div>
+</div>
+<!-- Rate -->
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold">$28</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+</div>
+<!-- Trust Badges & Safety Flags -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed font-semibold">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="pin_drop" style="font-variation-settings: 'FILL' 1;">pin_drop</span>
+              Area 1 Verified
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container" data-icon="badge">badge</span>
+              Verified License
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="security">security</span>
+              Zero Incident Record
+            </span>
+</div>
+<!-- Driver Rating & Trip Stats -->
+<div class="p-3 bg-surface-container-low rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">4.9</span>
+<span class="font-body-sm text-body-sm text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">142 reviews</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-tertiary-container">
+<span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              Tier-1 Security Passed
+            </div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-5 pt-3 border-t border-surface-container">
+<a class="h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-transform shadow-sm hover:bg-secondary-container" href="tel:5550192">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Call Marcus</span>
+</a>
+<button class="h-11 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-secondary text-on-surface flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="chat_bubble">chat_bubble</span>
+<span>Message</span>
+</button>
+</div>
+</article>
+<!-- DRIVER CARD 2: David Sterling -->
+<article class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/60 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] p-space-md flex flex-col justify-between hover:shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-200 ring-1 ring-secondary/15">
+<div class="space-y-4">
+<!-- Top Row: Avatar & Identification -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3.5">
+<div class="relative">
+<img alt="David Sterling" class="w-14 h-14 rounded-full object-cover ring-2 ring-surface-container" data-alt="Headshot of David Sterling, a senior executive chauffeur in his early forties, wearing an immaculate black formal uniform with clean silver collar badges. Ambient high-contrast studio portraiture captures his serene, authoritative, and trustworthy demeanor in a modern high-end vehicle lounge." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbktc9DvGeUAP2c9e3XFmEztAoEwxIA_s7FaT_Z-VqeVZH8CXlu1JM94jAb__zOzRPCEbgv-pVsvY78IsX3WKiyDk47kc3Xax4S_88C7gVnDoWwct-a6c2lka1ZPdeMuDdfeVKIGjWam1A751bRGF-DGdNtXt3aMy2XPHI9u_byiJkAEwENGoywXsqYfF66018ruo8vRkZFn32rrZXe71NpwUy58R8L11gBwzeEKEpNab1iKbLK3l9"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-600 text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-primary">David Sterling</h2>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Executive Sedan &amp; SUV specialist</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant tracking-wider font-mono">D-401-PRM</span>
+<span class="font-body-sm text-body-sm text-outline">• 12 yrs exp</span>
+</div>
+</div>
+</div>
+<!-- Rate -->
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold">$32</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+</div>
+<!-- Trust Badges & Safety Flags -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-semibold border border-emerald-200">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="local_police" style="font-variation-settings: 'FILL' 1;">local_police</span>
+              Police Cleared
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container" data-icon="badge">badge</span>
+              Verified License
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="security">security</span>
+              Zero Incident Record
+            </span>
+</div>
+<!-- Driver Rating & Trip Stats -->
+<div class="p-3 bg-surface-container-low rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">5.0</span>
+<span class="font-body-sm text-body-sm text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">98 reviews</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-secondary-fixed-variant font-bold">
+<span class="material-symbols-outlined text-[14px]" data-icon="military_tech">military_tech</span>
+              VIP Chauffeur
+            </div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-5 pt-3 border-t border-surface-container">
+<a class="h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-transform shadow-sm hover:bg-secondary-container" href="tel:5550193">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Call David</span>
+</a>
+<button class="h-11 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-secondary text-on-surface flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="chat_bubble">chat_bubble</span>
+<span>Message</span>
+</button>
+</div>
+</article>
+<!-- DRIVER CARD 3: Alexander Reed -->
+<article class="bg-surface-container-lowest rounded-DEFAULT border border-outline-variant/60 shadow-[0_1px_3px_rgba(15,23,42,0.04),0_4px_12px_rgba(15,23,42,0.03)] p-space-md flex flex-col justify-between hover:shadow-[0_6px_20px_rgba(15,23,42,0.08)] transition-all duration-200">
+<div class="space-y-4">
+<!-- Top Row: Avatar & Identification -->
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3.5">
+<div class="relative">
+<img alt="Alexander Reed" class="w-14 h-14 rounded-full object-cover ring-2 ring-surface-container" data-alt="Portrait of Alexander Reed, a professional private driver in formal tailored charcoal attire. Set against a clean, architectural backdrop with soft ambient daylight, the portrait reflects punctuality, attentiveness, and executive discretion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKEqBbUlcjX7TFnnitjOf6xeenYDWCQ2DzAkIifKcNTvIuUCyBTHO5yPw6KyhrKiaJw1HM8v1uhEPtn1XvXkhv5UqKotHoHupyonpEiKAu-1ID-nM9jzEWYFnkZeNh8aKxFTEIFY9F7rnQRVz8kZ-brJksz8W36LVluqpUjY8cO_J9Nh6h0StUIBWLRr0B6_rasANMblP9AyrXtRiknHvHXvpedhr15iqSYfL4GOW6anKpHWeWq-HA"/>
+<div class="absolute -bottom-1 -right-1 w-5 h-5 rounded-full bg-emerald-600 text-on-secondary flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[14px]" data-icon="check" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<h2 class="font-headline-sm text-headline-sm text-primary">Alexander Reed</h2>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">City commuter &amp; airport runs</p>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-surface-container text-on-surface-variant tracking-wider font-mono">A-719-EXP</span>
+<span class="font-body-sm text-body-sm text-outline">• 6 yrs exp</span>
+</div>
+</div>
+</div>
+<!-- Rate -->
+<div class="text-right">
+<span class="font-headline-md text-headline-md text-primary font-bold">$25</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">/hr</span>
+</div>
+</div>
+<!-- Trust Badges & Safety Flags -->
+<div class="flex flex-wrap items-center gap-2 pt-1">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-blue-50 text-blue-800 font-semibold border border-blue-200">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="bolt">bolt</span>
+              Immediate Available
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-medium">
+<span class="material-symbols-outlined text-[14px] text-on-tertiary-container" data-icon="badge">badge</span>
+              Verified License
+            </span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-800 font-medium">
+<span class="material-symbols-outlined text-[14px] text-emerald-600" data-icon="security">security</span>
+              Zero Incident Record
+            </span>
+</div>
+<!-- Driver Rating & Trip Stats -->
+<div class="p-3 bg-surface-container-low rounded-DEFAULT flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="flex items-center text-amber-500">
+<span class="material-symbols-outlined text-[18px]" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="font-label-lg text-label-lg text-on-surface">4.8</span>
+<span class="font-body-sm text-body-sm text-outline-variant">|</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">215 reviews</span>
+</div>
+<div class="flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-outline" data-icon="timer">timer</span>
+              ETA: 6 mins
+            </div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-3 mt-5 pt-3 border-t border-surface-container">
+<a class="h-11 rounded-full bg-secondary text-on-secondary flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-transform shadow-sm hover:bg-secondary-container" href="tel:5550194">
+<span class="material-symbols-outlined text-[18px]" data-icon="call">call</span>
+<span>Call Alexander</span>
+</a>
+<button class="h-11 rounded-full bg-surface-container-lowest border border-outline-variant hover:border-secondary text-on-surface flex items-center justify-center gap-2 font-label-lg text-label-lg active:scale-98 transition-all">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant" data-icon="chat_bubble">chat_bubble</span>
+<span>Message</span>
+</button>
+</div>
+</article>
+</div>
+<!-- Assurance Banner / Service Security Level -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-DEFAULT p-space-md flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-emerald-50 text-emerald-700 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Guaranteed Chauffeur Vetting</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Every chauffeur undergoes comprehensive FBI background check, biometric fingerprinting, and dynamic drug screening quarterly.</p>
+</div>
+</div>
+<button class="px-5 py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md whitespace-nowrap active:scale-95 transition-all shadow-sm">
+        Review Safety Standards
+      </button>
+</div>
+</main>
+<!-- BottomNavBar (from Shared Components JSON: Book Ride active) -->
+<!-- Responsive Pivot: Shown on mobile (md:hidden), hidden on desktop where TopAppBar nav exists -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex items-center justify-around px-space-md h-16 bg-surface-container-lowest shadow-md">
+<!-- 1. Book Ride (Active Match) -->
+<button class="flex flex-col items-center justify-center text-secondary font-bold py-1 px-3 rounded-full bg-secondary-fixed/30 active:scale-95 transition-transform duration-150">
+<span class="material-symbols-outlined text-[20px]" data-icon="directions_car">directions_car</span>
+<span class="text-label-sm font-label-sm">Book Ride</span>
+</button>
+<!-- 2. My Rides -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+<span class="text-label-sm font-label-sm">My Rides</span>
+</button>
+<!-- 3. Safety -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="verified">verified</span>
+<span class="text-label-sm font-label-sm">Safety</span>
+</button>
+<!-- 4. Profile -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant py-1 px-3 hover:text-secondary transition-colors duration-150 active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+<span class="text-label-sm font-label-sm">Profile</span>
+</button>
+</nav>
+</body></html>

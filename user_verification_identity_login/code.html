@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verify Your Identity - DriveSecure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#00174b",
+            "surface-container-low": "#f2f4f6",
+            "secondary-fixed": "#dbe1ff",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2d3133",
+            "tertiary-container": "#002113",
+            "on-tertiary-fixed": "#002113",
+            "surface-bright": "#f7f9fb",
+            "on-primary-container": "#7c839b",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed-dim": "#bec6e0",
+            "tertiary-fixed": "#6ffbbe",
+            "primary": "#000000",
+            "background": "#f7f9fb",
+            "primary-container": "#131b2e",
+            "surface-variant": "#e0e3e5",
+            "on-tertiary-container": "#009668",
+            "outline": "#76777d",
+            "on-error-container": "#93000a",
+            "surface-container": "#eceef0",
+            "surface-container-highest": "#e0e3e5",
+            "secondary-fixed-dim": "#b4c5ff",
+            "outline-variant": "#c6c6cd",
+            "secondary-container": "#316bf3",
+            "inverse-on-surface": "#eff1f3",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dae2fd",
+            "surface": "#f7f9fb",
+            "on-surface-variant": "#45464d",
+            "tertiary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#565e74",
+            "inverse-primary": "#bec6e0",
+            "on-secondary-container": "#fefcff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-primary-fixed": "#131b2e",
+            "secondary": "#0051d5",
+            "on-background": "#191c1e",
+            "surface-dim": "#d8dadc",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col antialiased selection:bg-secondary selection:text-on-secondary">
+<!-- Top Navigation Bar: Linear/Task flow with Back Arrow and Brand Identity Anchor -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-space-md h-14 bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-space-sm">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-full hover:bg-surface-container-high active:scale-95 transition-all text-on-surface flex items-center justify-center" type="button">
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[22px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-headline-sm font-headline-sm font-bold tracking-tight text-on-surface">DriveSecure</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed/40 text-on-secondary-fixed-variant text-label-sm font-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+<span>ENCRYPTED</span>
+</div>
+</div>
+</header>
+<!-- Main Identity Verification Form Canvas -->
+<main class="flex-1 pt-20 pb-12 px-margin flex items-center justify-center">
+<div class="w-full max-w-xl mx-auto space-y-6">
+<!-- Header & Security Shield Callout -->
+<div class="text-center space-y-3">
+<div class="inline-flex items-center justify-center p-3 rounded-full bg-secondary-fixed/50 text-secondary mb-1 ring-8 ring-secondary-fixed/20">
+<span class="material-symbols-outlined text-[32px]" data-icon="shield_person" style="font-variation-settings: 'FILL' 1;">shield_person</span>
+</div>
+<h1 class="text-headline-lg font-headline-lg text-on-surface tracking-tight">Verify Your Identity</h1>
+<p class="text-body-md font-body-md text-on-surface-variant max-w-md mx-auto">
+          To ensure safety and authorized booking, please provide and verify your details before exploring drivers in your area.
+        </p>
+</div>
+<!-- Elevated Form Card (Level 1 Surface) -->
+<div class="bg-surface-container-lowest border border-outline-variant/60 rounded-DEFAULT shadow-[0_4px_20px_rgba(15,23,42,0.05)] p-space-lg space-y-5">
+<form class="space-y-4" id="verification-form" onsubmit="event.preventDefault();">
+<!-- Full Name Input -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface" for="full-name">Full Name</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="person">person</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/15 transition-all" id="full-name" name="full-name" placeholder="e.g. Alexander Vance" required="" type="text"/>
+</div>
+</div>
+<!-- Age Stepper / Verification -->
+<div class="space-y-1.5">
+<div class="flex items-center justify-between">
+<label class="block text-label-md font-label-md text-on-surface" for="age">Age</label>
+<span class="text-label-sm font-label-sm text-on-tertiary-container bg-surface-container-low px-2 py-0.5 rounded-full border border-outline-variant/40">18+ Required</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="relative flex-1">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="badge">badge</span>
+</div>
+<input class="w-full pl-10 pr-12 py-3 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/15 transition-all" id="age" max="100" min="18" name="age" required="" type="number" value="28"/>
+<span class="absolute inset-y-0 right-0 pr-3.5 flex items-center pointer-events-none text-body-sm font-body-sm text-outline">yrs</span>
+</div>
+<div class="flex items-center border border-outline-variant rounded-DEFAULT bg-surface-container-lowest overflow-hidden h-[46px]">
+<button aria-label="Decrease age" class="px-3 h-full flex items-center justify-center hover:bg-surface-container active:scale-95 text-on-surface transition-colors" onclick="decrementAge()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="remove">remove</span>
+</button>
+<span class="w-[1px] h-5 bg-outline-variant"></span>
+<button aria-label="Increase age" class="px-3 h-full flex items-center justify-center hover:bg-surface-container active:scale-95 text-on-surface transition-colors" onclick="incrementAge()" type="button">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Number with Send OTP Badge -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface" for="mobile">Mobile Number</label>
+<div class="relative flex items-center">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="call">call</span>
+</div>
+<input class="w-full pl-10 pr-28 py-3 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/15 transition-all" id="mobile" name="mobile" placeholder="+1 (555) 019-2834" required="" type="tel"/>
+<button class="absolute right-1.5 px-3 py-1.5 bg-secondary-fixed/50 hover:bg-secondary-fixed text-on-secondary-fixed-variant rounded-full text-label-sm font-label-sm flex items-center gap-1 active:scale-95 transition-all" type="button">
+<span class="material-symbols-outlined text-[14px]" data-icon="sms">sms</span>
+<span>Send OTP</span>
+</button>
+</div>
+</div>
+<!-- Email ID -->
+<div class="space-y-1.5">
+<label class="block text-label-md font-label-md text-on-surface" for="email">Email ID</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]" data-icon="mail">mail</span>
+</div>
+<input class="w-full pl-10 pr-4 py-3 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT text-body-md font-body-md text-on-surface placeholder:text-outline focus:outline-none focus:border-secondary focus:ring-4 focus:ring-secondary/15 transition-all" id="email" name="email" placeholder="alexander.vance@executive.com" required="" type="email"/>
+</div>
+</div>
+<!-- Safety Pledge Checkbox -->
+<div class="pt-2">
+<label class="flex items-start gap-3 p-3 rounded-DEFAULT bg-surface-container-low border border-outline-variant/40 cursor-pointer hover:border-outline-variant transition-colors">
+<input class="mt-0.5 w-4 h-4 text-secondary rounded border-outline-variant focus:ring-secondary/20" id="safety-pledge" name="safety-pledge" required="" type="checkbox"/>
+<span class="text-body-sm font-body-sm text-on-surface leading-tight select-none">
+                I confirm the accuracy of my details for verified ride-matching
+              </span>
+</label>
+</div>
+<!-- Primary CTA Button -->
+<div class="pt-3">
+<a href="select_driver_area_directory_contact.html" class="w-full h-12 bg-primary hover:bg-primary-container active:scale-[0.98] text-on-primary font-label-lg text-label-lg rounded-full shadow-sm flex items-center justify-center gap-2 transition-all group">
+<span>Verify & Proceed to Select Area</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</form>
+<!-- Trust Callout Banner -->
+<div class="p-3 rounded-DEFAULT bg-surface-bright border border-outline-variant/50 flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+            Your data is 256-bit encrypted and only shared with assigned authorized drivers.
+          </p>
+</div>
+</div>
+<!-- Assistance Footer Link -->
+<div class="text-center pt-2">
+<a class="inline-flex items-center gap-1.5 text-label-md font-label-md text-on-surface-variant hover:text-secondary transition-colors underline-offset-4 hover:underline" href="#support">
+<span class="material-symbols-outlined text-[16px]" data-icon="contact_support">contact_support</span>
+<span>Need help verifying? Contact Support</span>
+</a>
+</div>
+</div>
+</main>
+<script>
+    function incrementAge() {
+      const input = document.getElementById('age');
+      const val = parseInt(input.value || 18, 10);
+      if (val < 100) input.value = val + 1;
+    }
+    function decrementAge() {
+      const input = document.getElementById('age');
+      const val = parseInt(input.value || 18, 10);
+      if (val > 18) input.value = val - 1;
+    }
+  </script>
+</body></html>

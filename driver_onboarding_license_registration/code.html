@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Driver Registration - DriveSecure</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#003ea8",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-surface": "#191c1e",
+            "on-secondary-fixed": "#00174b",
+            "surface-container-low": "#f2f4f6",
+            "secondary-fixed": "#dbe1ff",
+            "error-container": "#ffdad6",
+            "inverse-surface": "#2d3133",
+            "tertiary-container": "#002113",
+            "on-tertiary-fixed": "#002113",
+            "surface-bright": "#f7f9fb",
+            "on-primary-container": "#7c839b",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-high": "#e6e8ea",
+            "primary-fixed-dim": "#bec6e0",
+            "tertiary-fixed": "#6ffbbe",
+            "primary": "#000000",
+            "background": "#f7f9fb",
+            "primary-container": "#131b2e",
+            "surface-variant": "#e0e3e5",
+            "on-tertiary-container": "#009668",
+            "outline": "#76777d",
+            "on-error-container": "#93000a",
+            "surface-container": "#eceef0",
+            "surface-container-highest": "#e0e3e5",
+            "secondary-fixed-dim": "#b4c5ff",
+            "outline-variant": "#c6c6cd",
+            "secondary-container": "#316bf3",
+            "inverse-on-surface": "#eff1f3",
+            "on-primary": "#ffffff",
+            "primary-fixed": "#dae2fd",
+            "surface": "#f7f9fb",
+            "on-surface-variant": "#45464d",
+            "tertiary": "#000000",
+            "surface-container-lowest": "#ffffff",
+            "surface-tint": "#565e74",
+            "inverse-primary": "#bec6e0",
+            "on-secondary-container": "#fefcff",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-primary-fixed": "#131b2e",
+            "secondary": "#0051d5",
+            "on-background": "#191c1e",
+            "surface-dim": "#d8dadc",
+            "on-primary-fixed-variant": "#3f465c",
+            "on-tertiary": "#ffffff"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-lg": "1.5rem",
+            "margin": "1rem",
+            "gutter": "1rem",
+            "space-xl": "2rem",
+            "space-xs": "0.25rem",
+            "gutter-desktop": "1.5rem",
+            "margin-desktop": "2rem",
+            "space-md": "1rem",
+            "space-sm": "0.5rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "label-lg": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "display-lg-mobile": ["Plus Jakarta Sans"],
+            "headline-sm": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "display-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0", "fontWeight": "400" }],
+            "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "600" }],
+            "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0", "fontWeight": "400" }],
+            "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "letterSpacing": "-0.005em", "fontWeight": "600" }],
+            "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.015em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+            "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md text-body-md antialiased min-h-screen pb-16">
+<!-- TopAppBar (Linear Flow Sub-page: Task focused with Back & Close) -->
+<header class="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-space-md h-14 bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-2">
+<button aria-label="Go back" class="p-2 -ml-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="verified_user" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="font-headline-sm text-headline-sm font-bold tracking-tight text-on-surface">DriveSecure</span>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<span class="inline-flex items-center px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+        ENCRYPTED
+      </span>
+<button aria-label="Close registration" class="p-2 -mr-2 rounded-full text-on-surface-variant hover:bg-surface-container-high transition-colors active:scale-95" type="button">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+</div>
+</header>
+<!-- Main Container -->
+<main class="pt-20 px-4 max-w-2xl mx-auto">
+<!-- Header & Step Indicator -->
+<div class="mb-6">
+<div class="flex items-center justify-between mb-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md">
+<span class="material-symbols-outlined text-[14px]" data-icon="lock_person">lock_person</span>
+          Step 1 of 2
+        </span>
+<span class="font-label-md text-label-md text-secondary font-semibold">50% Completed</span>
+</div>
+<!-- Progress Track -->
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden mb-4">
+<div class="bg-secondary h-full rounded-full w-1/2 transition-all duration-300"></div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Register as an Authorized Driver</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Join our elite network of professional chauffeurs and earn on your schedule.</p>
+</div>
+<!-- Active Stage Badge Pill -->
+<div class="flex items-center gap-2 p-3 mb-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT shadow-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">
+<span class="material-symbols-outlined text-[18px]" data-icon="badge">badge</span>
+</div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Driver Profile &amp; Verification</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Verify credentials for executive class privileges</p>
+</div>
+</div>
+<!-- Form -->
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Section: Personal Information -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT border border-outline-variant shadow-sm space-y-4">
+<div class="flex items-center gap-2 pb-2 border-b border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="person">person</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Personal Information</h2>
+</div>
+<!-- Name Inputs: Side by side on larger, stacked on small -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="firstName">First Name</label>
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface placeholder:text-outline focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md" id="firstName" placeholder="e.g. Julian" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="surname">Surname</label>
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface placeholder:text-outline focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md" id="surname" placeholder="e.g. Vance" required="" type="text"/>
+</div>
+</div>
+<!-- Contact Details -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="mobile">Mobile Number</label>
+<div class="flex rounded-DEFAULT border border-outline-variant overflow-hidden focus-within:border-secondary focus-within:ring-2 focus-within:ring-secondary/20 transition-all bg-surface-container-lowest">
+<div class="flex items-center px-3 bg-surface-container-low border-r border-outline-variant text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[18px] mr-1 text-on-surface-variant" data-icon="flag">flag</span>
+<span>+1</span>
+</div>
+<input class="w-full h-12 px-4 border-0 text-on-surface placeholder:text-outline focus:ring-0 font-body-md text-body-md" id="mobile" placeholder="(555) 234-8901" required="" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="email">Email Address</label>
+<div class="relative">
+<input class="w-full h-12 pl-11 pr-4 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface placeholder:text-outline focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md" id="email" placeholder="j.vance@executivefleet.com" required="" type="email"/>
+<span class="material-symbols-outlined absolute left-3.5 top-3.5 text-on-surface-variant text-[20px]" data-icon="mail">mail</span>
+</div>
+</div>
+</div>
+<!-- Section: Driving License Details -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT border border-outline-variant shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="drive_eta">drive_eta</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Driving License</h2>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-tertiary-container" data-icon="shield">shield</span> Security Checked
+          </span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="licenseNo">License Number</label>
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface uppercase placeholder:text-outline focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md" id="licenseNo" placeholder="DL-9824-7612" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="expiryDate">Expiry Date</label>
+<input class="w-full h-12 px-4 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md" id="expiryDate" required="" type="date"/>
+</div>
+</div>
+<!-- Stylized Drag-and-Drop Card -->
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5">License Document Upload</label>
+<div class="relative border-2 border-dashed border-outline-variant hover:border-secondary transition-colors rounded-DEFAULT p-6 text-center bg-surface-container-low cursor-pointer group">
+<input accept=".pdf,.jpg,.jpeg,.png" aria-label="Upload License Front &amp; Back" class="absolute inset-0 w-full h-full opacity-0 cursor-pointer" type="file"/>
+<div class="flex justify-center items-center gap-2 mb-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="photo_camera">photo_camera</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center text-secondary group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="document_scanner">document_scanner</span>
+</div>
+</div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Upload License Front &amp; Back (PDF, JPG, PNG)</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Drag and drop file here, or click to browse files up to 15MB</p>
+<div class="mt-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant text-on-surface font-label-md text-label-md">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="cloud_upload">cloud_upload</span> Choose file
+            </div>
+</div>
+</div>
+</div>
+<!-- Section: Operating Area Selector -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT border border-outline-variant shadow-sm space-y-4">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="near_me">near_me</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Operating Area Selector</h2>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Select Primary Zone</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+<!-- Area 1 -->
+<label class="relative flex items-start p-3.5 border rounded-DEFAULT cursor-pointer hover:border-secondary transition-all bg-surface-container-lowest has-[:checked]:border-secondary has-[:checked]:bg-secondary-fixed/20">
+<input checked="" class="mt-0.5 text-secondary focus:ring-secondary focus:ring-offset-0 border-outline-variant" name="operatingArea" type="radio" value="area1"/>
+<div class="ml-3">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Area 1</span>
+<span class="inline-flex px-1.5 py-0.5 rounded-full bg-tertiary-container text-tertiary-fixed font-label-sm text-label-sm font-semibold">High Demand</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Downtown &amp; Financial District</p>
+</div>
+</label>
+<!-- Area 2 -->
+<label class="relative flex items-start p-3.5 border rounded-DEFAULT cursor-pointer hover:border-secondary transition-all bg-surface-container-lowest has-[:checked]:border-secondary has-[:checked]:bg-secondary-fixed/20">
+<input class="mt-0.5 text-secondary focus:ring-secondary focus:ring-offset-0 border-outline-variant" name="operatingArea" type="radio" value="area2"/>
+<div class="ml-3">
+<span class="font-label-md text-label-md font-bold text-on-surface">Area 2</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Northside &amp; Suburbs</p>
+</div>
+</label>
+<!-- Area 3 -->
+<label class="relative flex items-start p-3.5 border rounded-DEFAULT cursor-pointer hover:border-secondary transition-all bg-surface-container-lowest has-[:checked]:border-secondary has-[:checked]:bg-secondary-fixed/20">
+<input class="mt-0.5 text-secondary focus:ring-secondary focus:ring-offset-0 border-outline-variant" name="operatingArea" type="radio" value="area3"/>
+<div class="ml-3">
+<span class="font-label-md text-label-md font-bold text-on-surface">Area 3</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">West End &amp; Tech Parks</p>
+</div>
+</label>
+<!-- Area 4 -->
+<label class="relative flex items-start p-3.5 border rounded-DEFAULT cursor-pointer hover:border-secondary transition-all bg-surface-container-lowest has-[:checked]:border-secondary has-[:checked]:bg-secondary-fixed/20">
+<input class="mt-0.5 text-secondary focus:ring-secondary focus:ring-offset-0 border-outline-variant" name="operatingArea" type="radio" value="area4"/>
+<div class="ml-3">
+<div class="flex items-center gap-1.5">
+<span class="font-label-md text-label-md font-bold text-on-surface">Area 4</span>
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="flight">flight</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Southside &amp; Airport Corridor</p>
+</div>
+</label>
+</div>
+</div>
+<!-- Section: Professional Experience -->
+<div class="bg-surface-container-lowest p-5 rounded-DEFAULT border border-outline-variant shadow-sm space-y-4">
+<div class="flex items-center gap-2 pb-2 border-b border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="history_edu">history_edu</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Driving Experience</h2>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface-variant mb-1.5" for="experience">Years of Professional Chauffeur / Driving Experience</label>
+<div class="relative">
+<select class="w-full h-12 pl-4 pr-10 rounded-DEFAULT bg-surface-container-lowest border border-outline-variant text-on-surface focus:border-secondary focus:ring-2 focus:ring-secondary/20 transition-all outline-none font-body-md text-body-md appearance-none" id="experience" required="">
+<option disabled="" selected="" value="">Select experience level</option>
+<option value="1-2">1 - 2 Years (Standard Onboarding)</option>
+<option value="3-5">3 - 5 Years (Executive Fleet Eligible)</option>
+<option value="6-10">6 - 10 Years (Senior Chauffeur Tier)</option>
+<option value="10+">10+ Years (Master VIP Fleet Specialist)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3.5 top-3.5 pointer-events-none text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-secondary" data-icon="info">info</span> Minimum 2 years of professional driving is required for VIP tiers.
+          </p>
+</div>
+</div>
+<!-- Terms & Compliance Checkbox -->
+<div class="p-4 rounded-DEFAULT bg-surface-container-low border border-outline-variant">
+<label class="flex items-start gap-3 cursor-pointer">
+<input class="mt-1 h-5 w-5 rounded text-secondary focus:ring-secondary border-outline-variant" required="" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface">
+            I agree to platform terms, background verification, driving record checks, and consent to identity authentication.
+          </span>
+</label>
+</div>
+<!-- Prominent CTA Action -->
+<div class="pt-2">
+<a href="select_driver_area_directory_contact.html" class="w-full h-14 rounded-full bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2 shadow-md hover:opacity-95 active:scale-[0.98] transition-all duration-150">
+<span>Complete Registration & Get Onboarded</span>
+<span class="material-symbols-outlined text-[20px]" data-icon="arrow_forward">arrow_forward</span>
+</a>
+<p class="text-center font-body-sm text-body-sm text-on-surface-variant mt-3 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary-container" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+256-bit encrypted secure protocol. No credit card required.
+</p>
+</div>
+</form>
+</main>
+</body></html>
